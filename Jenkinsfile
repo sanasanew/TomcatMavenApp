@@ -3,11 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Hello World"'
-                sh '''
-                    echo "Multiline shell steps"
-                    ls –lah
-                '''
+                sh 'mvn clean install -f pom.xml'
+
             }
         }
     }
